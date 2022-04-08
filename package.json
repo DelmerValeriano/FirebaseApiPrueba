@@ -1,0 +1,29 @@
+{
+  "name": "appland-firebase-api",
+  "version": "1.0.0",
+  "description": "Appland Firebase API",
+  "license": "MIT",
+  "author": "Brayan Josue Medina",
+  "scripts": {
+    "login": "firebase login",
+    "preserve": "yarn package:functions",
+    "serve": "firebase serve --only functions",
+    "deploy": "yarn run format && firebase deploy",
+    "format": "yarn run prettier --write --no-semi './app/index.js'",
+    "prepackage:functions": "rimraf functions",
+    "build": "babel app --out-dir functions --copy-files --ignore app/node_modules",
+    "postpackage:functions": "cd functions && yarn",
+    "commit": "git add . && gitmoji -c"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "firebase-tools": "^7.13.1",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  }
+}

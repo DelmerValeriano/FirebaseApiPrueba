@@ -1,0 +1,5 @@
+node_modules/
+yarn.lock
+.runtimeconfig.json
+**/.DS_Store
+firebase-debug.log
